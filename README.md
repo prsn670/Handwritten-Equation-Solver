@@ -4,7 +4,9 @@ Takes in a handwritten equation and solves it.
 ## Install
 pip install patool (for extracting rar)
 pip install kaggle (download dataset)
-instrucgtions for setting up kaggle api used for downloading data set https://adityashrm21.github.io/Setting-Up-Kaggle/
+pip install opencv-python
+pip install pillow (to read jpg file)
+instructions for setting up kaggle api used for downloading data set https://adityashrm21.github.io/Setting-Up-Kaggle/
 
 ## data
 Sample data from https://www.kaggle.com/xainano/handwrittenmathsymbols
