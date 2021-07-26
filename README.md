@@ -20,3 +20,4 @@ runfile('C:/Users/{Username}/Documents/Udacity/NanoDegree/DataScience/Projects/C
 https://www.pyimagesearch.com/2020/08/24/ocr-handwriting-recognition-with-opencv-keras-and-tensorflow/
 https://vipul-gupta73921.medium.com/handwritten-equation-solver-using-convolutional-neural-network-a44acc0bd9f8
 https://github.com/vipul79321/Handwritten-Equation-Solver
+https://github.com/udacity/machine-learning/blob/master/projects/practice_projects/cnn/mnist-mlp/mnist_mlp.ipynb
