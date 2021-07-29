@@ -1,12 +1,13 @@
 import cv2
 import os
 import matplotlib.pyplot as plt
-import numpy as np
 from constants.constants import EXTRACTED_IMAGES
+from constants.labels import label_dict
 
 
 def img_thing(folder):
     train_data = []
+    label_array = []
     folder_path = os.path.join(EXTRACTED_IMAGES, folder)
     for filename in os.listdir(folder_path):
         # read the image file
@@ -19,7 +20,7 @@ def img_thing(folder):
         # sort contours form left to right
         sorted_bounding_boxes = sort_contours(contours)
 
-        # resize bounding boxes to 28 x 28
+        # resize contour regions to 28 x 28
         maxi = 0
         for box in sorted_bounding_boxes:
             # get top right corner point as well as width and height of box
@@ -35,15 +36,15 @@ def img_thing(folder):
             crop_img = invert[y_max:y_max+h_max+10, x_max:x_max+w_max+10]
             # resize the cropped image and scale to a 28 x 28 image
             resize_img = cv2.resize(crop_img, (28, 28))
-            resize_img = np.reshape(resize_img,(784,1))
             train_data.append(resize_img)
+            label_array.append(label_dict[folder])
 
 
     # used for verification
     # cv2.imwrite('invert_pic.jpg', invert)
     # print(invert)
 
-    return train_data
+    return train_data, label_array
 
 
 def sort_contours(ctrs):
