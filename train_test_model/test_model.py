@@ -14,7 +14,7 @@ def test_model():
     loaded_model.load_weights('best.hdf5')
     # print(loaded_model.get_weights())
     # extract test img
-    test_data = extract_test_img_data('test2.jpg')
+    test_data = extract_test_img_data('test3.jpg')
     # print(len(test_data))
     # print(len(test_data[0]))
     # print(len(test_data[0][0]))

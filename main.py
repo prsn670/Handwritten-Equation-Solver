@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
         print("start training model")
         start = time.time()
-        # train_model(train_data, train_labels, validation_data, validation_labels)
+        train_model(train_data, train_labels, validation_data, validation_labels)
         end = time.time()
         print(end - start, "train model execution time")
     test_model()
