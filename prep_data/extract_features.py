@@ -115,9 +115,9 @@ def extract_test_img_data(img_name):
         crop_img = thresh[y:y + h + 10, x:x + w + 10]
         # resize the cropped image and scale to a 28 x 28 image
         resize_img = cv2.resize(crop_img, (28, 28))
-        cv2.imshow("work", resize_img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # cv2.imshow("work", resize_img)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
         img_data.append(resize_img)
 
     return img_data
