@@ -134,4 +134,3 @@ dmypy.json
 # Project Specific
 resource/data.rar
 resource/validation_images
-resource/extracted_images
