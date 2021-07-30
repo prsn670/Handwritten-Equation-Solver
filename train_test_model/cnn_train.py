@@ -1,5 +1,5 @@
 import keras.utils
-from keras.models import Sequential
+from keras.models import Sequential, model_from_json
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 import keras.utils
 import numpy as np
@@ -11,9 +11,9 @@ def train_model(train_data, train_labels, validation_data, validation_labels):
     num_classes = len(np.unique(train_labels))
     validation_classes = len(np.unique(validation_labels))
     print(validation_classes)
-    x_train = np.array(train_data).reshape(62512, 28, 28, 1)
+    x_train = np.array(train_data).reshape(len(train_data), len(train_data[0]), len(train_data[0][0]), 1)
     y_train = keras.utils.to_categorical(train_labels, num_classes)
-    x_validation = np.array(validation_data).reshape(62512, 28, 28, 1)
+    x_validation = np.array(validation_data).reshape(len(validation_data), len(validation_data[0]), len(validation_data[0][0]), 1)
     y_validation = keras.utils.to_categorical(validation_labels, validation_classes)
     print(y_train.shape, "y_train shape")
     print(x_train.shape, "x_train shape")
@@ -46,3 +46,10 @@ def train_model(train_data, train_labels, validation_data, validation_labels):
     model.fit(x_train, y_train, batch_size=32, epochs=100,
               validation_data=(x_validation, y_validation), verbose=2,
               callbacks=[checkpointer], shuffle=True)
+
+    model_json = model.to_json()
+    with open("model_final.json", "w") as json_file:
+        json_file.write(model_json)
+
+
+
