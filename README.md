@@ -1,5 +1,5 @@
 # Handwritten-Equation-Solver
-Takes in a handwritten equation predicts the characters and outputs the result. Note that the eval method is currently commented out. 
+Takes in a handwritten equation predicts the characters and outputs the result. Note that the eval method is currently commented out. My blog post concerning this project can be found at https://parshad-anil.medium.com/handwritten-equation-solver-ab2ae3eb262b.
 
 ## Running the project
 Python 3.8 was used in the making of this project with Anaconda. Program was run in Pycharm 2021.1.3. Using the run button in main.py with configuration to run in Python console enabled. You may also run this program from the terminal. Go to the root directory of the project (Handwritten-Equation-Solver) and use `python main.py` to run. Make sure you install the needed packages listed below before running.
@@ -50,4 +50,5 @@ These sites helped in researching and preparing this project. Discussion and cod
 - https://github.com/vipul79321/Handwritten-Equation-Solver
 - https://github.com/udacity/machine-learning/blob/master/projects/practice_projects/cnn/mnist-mlp/mnist_mlp.ipynb
 - https://github.com/udacity/machine-learning/blob/master/projects/practice_projects/cnn/cifar10-classification/cifar10_cnn.ipynb
+- https://nanonets.com/blog/handwritten-character-recognition/
 
