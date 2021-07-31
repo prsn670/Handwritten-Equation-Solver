@@ -7,6 +7,14 @@ from keras.callbacks import ModelCheckpoint
 
 
 def train_model(train_data, train_labels, validation_data, validation_labels):
+    """
+    Creates and trains our model to be used in testing.
+    :param train_data: training image data
+    :param train_labels: class labels associated to each image
+    :param validation_data: validation image data
+    :param validation_labels: class labels associated to each image
+    :return:
+    """
     # Create training data
     num_classes = len(np.unique(train_labels))
     validation_classes = len(np.unique(validation_labels))

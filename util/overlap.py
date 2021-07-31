@@ -2,6 +2,14 @@
 # Returns true if two rectangles(l1, r1)
 # and (l2, r2) overlap
 def doOverlap(l1, r1, l2, r2):
+    """
+    Takes in the points of two bounding boxes and checks if they overlap
+    :param l1: top-left corner coordinate of box 1
+    :param r1: bottom-right corner coordinate of box 1
+    :param l2: top-left corner coordinate of box 2
+    :param r2: bottom-right corner coordinate of box 2
+    :return:
+    """
     # To check if either rectangle is actually a line
     # For example  :  l1 ={-1,0}  r1={1,1}  l2={0,-1}  r2={0,1}
 

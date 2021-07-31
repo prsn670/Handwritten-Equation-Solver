@@ -7,6 +7,11 @@ from constants.constants import TEST_DATA
 
 
 def test_model():
+    """
+    Tests model with handwritten equations. Displays the resulting string and actual string. I both strings are the same,
+    it is evaluated and the answer is diplayed
+    :return:
+    """
     json_file = open('model_final.json', 'r')
     loaded_model_json = json_file.read()
     json_file.close()

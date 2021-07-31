@@ -5,6 +5,10 @@ from constants.constants import EXTRACTED_IMAGES, VALIDATION_IMAGES
 
 
 def split_data():
+    """
+    Splits data into training and validation sections for training.
+    :return:
+    """
     # check if validation folder exists, create if not
     if not os.path.exists(VALIDATION_IMAGES):
         os.mkdir(VALIDATION_IMAGES)

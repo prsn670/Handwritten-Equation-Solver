@@ -7,6 +7,10 @@ import kaggle
 
 
 def download_and_extract_data():
+    """
+    Downloads data, unzips and places it in the correct folder
+    :return:
+    """
     if not os.path.exists(RAR_FILEPATH):
         print(f'downloading data to {RESOURCE_DIR}')
         kaggle.api.authenticate()

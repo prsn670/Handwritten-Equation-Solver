@@ -9,6 +9,11 @@ from util.overlap import doOverlap
 
 
 def extract_training_img_data(folder):
+    """
+    Processes the image for training. Making the image binary, creating bounding boxes around the features, and resizing.
+    :param folder: folder where images reside
+    :return:
+    """
     train_data = []
     label_array = []
     folder_path = os.path.join(EXTRACTED_IMAGES, folder)
@@ -53,6 +58,12 @@ def extract_training_img_data(folder):
 
 
 def extract_test_img_data(img_name):
+    """
+    Processes the image for testing. Making the image binary, creating bounding boxes around the features, and resizing.
+    Also tries to remove overlapping bounding boxes.
+    :param img_name:
+    :return:
+    """
     img_data = []
     img_path = os.path.join(TEST_DATA, img_name)
 
