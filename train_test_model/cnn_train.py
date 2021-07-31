@@ -40,16 +40,20 @@ def train_model(train_data, train_labels, validation_data, validation_labels):
     model.compile(loss='categorical_crossentropy', optimizer='rmsprop',
                   metrics=['accuracy'])
 
-    # train the model
+    # train the model and save the best weights
     checkpointer = ModelCheckpoint(filepath='best.hdf5', verbose=1,
                                    save_best_only=True)
     model.fit(x_train, y_train, batch_size=32, epochs=100,
               validation_data=(x_validation, y_validation), verbose=2,
               callbacks=[checkpointer], shuffle=True)
 
+    # save model
     model_json = model.to_json()
     with open("model_final.json", "w") as json_file:
         json_file.write(model_json)
+
+    print(f'Training data evaluation: {model.evaluate(x_train, y_train)}')
+    print(f'Validation data evaluation: {model.evaluate(x_validation, y_validation)}')
 
 
 

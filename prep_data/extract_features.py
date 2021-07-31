@@ -1,6 +1,6 @@
 import cv2
 import os
-import matplotlib.pyplot as plt
+from constants.labels import test_label_dict
 from prompt_toolkit.data_structures import Point
 
 from constants.constants import EXTRACTED_IMAGES, TEST_DATA
@@ -107,6 +107,8 @@ def extract_test_img_data(img_name):
             continue
 
     # crop the individual characters
+    print(f'Number of characters seen by extractor for {img_name}: {len(bounding_rects)}')
+    print(f'Number of actual characters in image {img_name}: {len(test_label_dict[img_name])}')
     for rect in bounding_rects:
         x = rect[0]
         y = rect[1]
