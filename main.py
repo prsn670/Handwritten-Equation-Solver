@@ -1,5 +1,3 @@
-import numpy as np
-
 from prep_data.download_and_extract import download_and_extract_data
 from prep_data.extract_features import extract_training_img_data
 import time
