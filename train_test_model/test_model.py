@@ -25,6 +25,7 @@ def test_model():
 
         result_string = ''
         for data in test_data:
+            eval_bool = False
             evaluate_data = np.array(data)
             evaluate_data = data.reshape(1, evaluate_data.shape[0], evaluate_data.shape[1], 1)
             result = loaded_model.predict_classes(evaluate_data)
@@ -34,9 +35,10 @@ def test_model():
             if result_string == test_label_dict[file_name]:
                 print('Match')
                 correct += 1
+                eval_bool = True
         print(f'model equation result: {result_string}')
         print(f'actual equation: {test_label_dict[file_name]}\n')
-        # print(eval(result_string))
+        if eval_bool:
+            print(f'Resulting string evaluates to: {eval(result_string)}')
 
-        # print(f'Resulting evaluation of equation: {eval(result_string)}')
     print(f'Correct number of guesses: {correct} out of {len(os.listdir(TEST_DATA))}')

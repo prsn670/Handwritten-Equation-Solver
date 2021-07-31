@@ -21,7 +21,10 @@ if __name__ == "__main__":
     # perform data feature extraction and training only if file for model and weights hasn't been generated
     if not (os.path.isfile('best.hdf5') and os.path.isfile('model_final.json')):
         print("Creating training and validation data")
+        start = time.time()
         split_data()
+        end = time.time()
+        print(end - start, "split data execution time")
 
         for folder in os.listdir(EXTRACTED_IMAGES):
             extracted_results = extract_training_img_data(folder)

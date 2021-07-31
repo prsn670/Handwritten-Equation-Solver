@@ -29,7 +29,7 @@ def extract_training_img_data(folder):
         # resize contour regions to 28 x 28
         maxi = 0
         for box in sorted_bounding_boxes:
-            # get top right corner point as well as width and height of box
+            # get top left corner point as well as width and height of box
             x, y, width, height = cv2.boundingRect(box)
             maxi = max(width * height, maxi)
             if maxi == width * height:
@@ -77,7 +77,7 @@ def extract_test_img_data(img_name):
 
     # Remove multiple contours for the same digit. Drop smaller bounding rectangles.
     for box in sorted_bounding_boxes:
-        # get top right corner point as well as width and height of box and put into a list
+        # get top left corner point as well as width and height of box and put into a list
         x, y, w, h = cv2.boundingRect(box)
         rect = [x, y, w, h]
         bounding_rects.append(rect)  # returns - x, y, width, height
@@ -86,11 +86,12 @@ def extract_test_img_data(img_name):
             if rect == rect_2:
                 continue
             else:
+                # get coordinates for top-left and bottom-right of rectangle
                 l1 = Point(rect[0], rect[1])
-                r1 = Point(rect[0] + rect[2], rect[1] + rect[3])
+                r1 = Point(rect[0] + rect[2] + 10, rect[1] - rect[3] - 10)
                 l2 = Point(rect_2[0], rect_2[1])
-                r2 = Point(rect_2[0] + rect_2[2], rect_2[1] + rect_2[3])
-                # check if rectangles overlap
+                r2 = Point(rect_2[0] + rect_2[2] + 10, rect_2[1] - rect_2[3] - 10)
+                # check if rectangles overlap, with padding
                 if doOverlap(l1, r1, l2, r2):
                     # check for smaller rectangle
                     area1 = rect[2] * rect[3]
