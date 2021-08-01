@@ -60,6 +60,7 @@ def train_model(train_data, train_labels, validation_data, validation_labels):
     with open("model_final.json", "w") as json_file:
         json_file.write(model_json)
 
+    model.load_weights('best.hdf5')
     print(f'Training data evaluation: {model.evaluate(x_train, y_train)}')
     print(f'Validation data evaluation: {model.evaluate(x_validation, y_validation)}')
 
