@@ -1,6 +1,8 @@
 # Handwritten-Equation-Solver
 Takes in a handwritten equation predicts the characters and outputs the result. Note that the eval method is currently commented out. My blog post concerning this project can be found at https://parshad-anil.medium.com/handwritten-equation-solver-ab2ae3eb262b.
 
+Link to this project: https://github.com/prsn670/Handwritten-Equation-Solver
+
 ## Running the project
 Python 3.8 was used in the making of this project with Anaconda. Program was run in Pycharm 2021.1.3. Using the run button in main.py with configuration to run in Python console enabled. You may also run this program from the terminal. Go to the root directory of the project (Handwritten-Equation-Solver) and use `python main.py` to run. Make sure you install the needed packages listed below before running.
 ### Install
